@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import "bootstrap/dist/css/bootstrap-grid";
 @import "scss/base";
+@import "scss/global";
 
 body {
     background: #261E35;
@@ -12,6 +13,9 @@ body {
 .App {
     &_content {
         padding: 20px;
+        &-grid {
+            grid-gap: 20px;
+        }
     }
 }
 
