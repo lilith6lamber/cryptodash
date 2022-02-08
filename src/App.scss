@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+@import "bootstrap/dist/css/bootstrap-grid";
+@import "scss/base";
+
+body {
+    background: #261E35;
+    font-family: "Inter", sans-serif;
+    color: #fff;
+    height: 100vh;
+}
+
+.App {
+    &_content {
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 767.98px) {
+    .App {
+        &_content {
+            padding: 30px;
+            flex-grow: 1;
+        }
+    }
+}

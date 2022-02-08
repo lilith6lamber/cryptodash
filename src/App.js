@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import {useWindowWidth} from '@react-hook/window-size/throttled'
+import Sidebar from "./components/Sidebar";
+import Panel from "./components/Panel";
+import Promo from "./components/Promo";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const windowWidth = useWindowWidth();
+    return (
+        <div className="App d-md-flex align-items-start">
+            <Sidebar/>
+            <div className="App_content">
+                <Panel windowWidth={windowWidth} />
+                <div className="App_content-grid">
+                    <Promo />
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
