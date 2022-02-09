@@ -26,6 +26,10 @@
             justify-content: center;
             border-radius: 100%;
 
+            &.profile {
+                background: #3F3655;
+            }
+
             &.notifications {
                 background: #2B2638;
                 border: 1px solid rgba(217, 203, 255, 0.4);

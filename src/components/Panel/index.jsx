@@ -3,12 +3,17 @@ import {RiArrowLeftSLine} from 'react-icons/ri'
 import {BiBell} from 'react-icons/bi'
 import {IoMdSearch} from 'react-icons/io'
 import avatar from '../../assets/avatar.png'
+import DotsLoader from "../DotsLoader";
+import {useState} from "react";
 
 //TODO: search with loader (dots?)
 
 export default function Panel({windowWidth}) {
+    const [isLoading, setLoading] = useState(false);
     const handleSearch = (e) => {
         e.preventDefault();
+        setLoading(true);
+        setInterval(() => setLoading(false), 1500);
     }
 
     return (
@@ -30,6 +35,12 @@ export default function Panel({windowWidth}) {
                       onSubmit={handleSearch}
                 >
                     <input className="field" type="search" placeholder="Search" />
+                    {
+                        isLoading ?
+                            <DotsLoader className={"dotsLoader show"} />
+                            :
+                            <DotsLoader className={"dotsLoader show"} />
+                    }
                     <button className="btn" type="submit">
                         <IoMdSearch />
                     </button>

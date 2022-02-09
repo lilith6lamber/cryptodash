@@ -3,6 +3,7 @@ import {useWindowWidth} from '@react-hook/window-size/throttled'
 import Sidebar from "./components/Sidebar";
 import Panel from "./components/Panel";
 import Promo from "./components/Promo";
+import Profit from "./components/Profit";
 import Transactions from "./components/Transactions";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                 <div className="App_content-grid d-grid">
                     <Promo />
                     <Transactions />
+                    <Profit />
                 </div>
             </div>
         </div>
