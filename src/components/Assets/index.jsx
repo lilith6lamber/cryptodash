@@ -9,45 +9,44 @@ export default class Assets extends Component {
             eth: 4.65,
             ltc: 15.33
         },
-        data: this.props.data
+        data: this.props.data,
+        modifiedData: {}
     }
 
     componentDidMount() {
-        this.getData();
+        this.setData();
     }
 
     componentDidUpdate(prevProps, prevState, SS) {
         if (this.props.data !== prevProps.data) {
             this.setState({data: this.props.data})
+            this.setData();
         }
     }
 
-    // calculate = () => {
-    //     for (let i = 0; i < filterArr.length; i++) {
-    //         for (let key in assets) {
-    //             if (key === filterArr[i].symbol) {
-    //                 updateArr((prevState) => {
-    //                     prevState.map(item => (
-    //                         item.symbol === key
-    //                             ? {...item, calculated: (item.last * assets[key]).toFixed(2)}
-    //                             : item
-    //                     ))
-    //                 })
-    //             }
-    //         }
-    //     }
-    // }
-
-    getData = () => {
-        function filter(value, deps) {
-            for (let i = 0; i < deps.length; i++) {
-                while (value === deps[i]) {
-                    return true
-                }
+    setData = () => {
+        const {data, assets} = this.state;
+        for (let assetKey in assets) {
+            for (let dataKey in data) {
+                // assetKey === data[dataKey].symbol ? '' : ''
             }
         }
+        //this.state.data[someKey].symbol = this.state.assets[anotherKey]
+        for (let i = 0; i < this.state.data.length; i++) {
+            console.log(Object.entries(this.state.data)[i])
+            for (let key in this.state.assets) {
+                // Object.entries(this.state.data[i])
+            }
+        }
+    }
 
-        // this.setState({data: this.state.data.filter(item => filter(item.symbol, Object.keys(this.state.assets)))})
+    calculate = () => {
+        for (let key in this.state.assets) {
+            if (key === this.state.data[key]) {
+                console.log(this.state.assets[key] * this.state.data[key].last)
+                return this.state.assets[key] * this.state.data[key].last
+            }
+        }
     }
 
     render() {
