@@ -6,14 +6,25 @@ import avatar from '../../assets/avatar.png'
 import DotsLoader from "../DotsLoader";
 import {useState} from "react";
 
-//TODO: search with loader (dots?)
-
 export default function Panel({windowWidth}) {
     const [isLoading, setLoading] = useState(false);
+
+    const simulateSearch = () => {
+        document.querySelector(`#searchQuery`).value = '';
+        setLoading(true);
+        setTimeout(() => setLoading(false), 3000);
+    }
+
+    const handleKey = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            simulateSearch();
+        }
+    }
+
     const handleSearch = (e) => {
         e.preventDefault();
-        setLoading(true);
-        setInterval(() => setLoading(false), 1500);
+        simulateSearch();
     }
 
     return (
@@ -33,13 +44,20 @@ export default function Panel({windowWidth}) {
                       action="#"
                       method="get"
                       onSubmit={handleSearch}
+                      onKeyDown={handleKey}
                 >
-                    <input className="field" type="search" placeholder="Search" />
+                    <input
+                        className="field"
+                        id="searchQuery"
+                        type="search"
+                        placeholder="Search"
+                        disabled={isLoading}
+                    />
                     {
                         isLoading ?
                             <DotsLoader className={"dotsLoader show"} />
                             :
-                            <DotsLoader className={"dotsLoader show"} />
+                            <DotsLoader className={"dotsLoader"} />
                     }
                     <button className="btn" type="submit">
                         <IoMdSearch />
