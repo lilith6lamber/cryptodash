@@ -12,14 +12,14 @@ export default class Trend extends Component {
         this.setState({data: this.props.data})
     }
 
-    componentDidUpdate(prevProps, prevState, SS) {
-        if (this.props.data !== prevProps.data) {
-            this.setState({data: this.props.data})
-        }
-        if (this.props.windowWidth !== prevProps.windowWidth) {
-            this.setState({windowWidth: this.props.windowWidth})
-        }
-    }
+    // componentDidUpdate(prevProps, prevState, SS) {
+    //     if (this.props.data !== prevProps.data) {
+    //         this.setState({data: this.props.data})
+    //     }
+    //     if (this.props.windowWidth !== prevProps.windowWidth) {
+    //         this.setState({windowWidth: this.props.windowWidth})
+    //     }
+    // }
 
     render() {
         return (
@@ -34,6 +34,7 @@ export default class Trend extends Component {
                     <ul className="trend_table-info d-flex flex-column">
                         {
                             Object.keys(this.state.data).map(key => {
+                                console.log(this.state.data[key])
                                 return (
                                     <li key={this.state.data[key].symbol} className="trend_table-info_item">
                                     <span className="coin-id">{this.state.data[key].symbol.toUpperCase()}
