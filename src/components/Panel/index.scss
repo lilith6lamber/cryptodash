@@ -75,6 +75,12 @@
                 &::placeholder {
                     color: #E2D8FD;
                 }
+
+                &[disabled] {
+                    &::placeholder {
+                        opacity: 0;
+                    }
+                }
             }
 
             .btn {

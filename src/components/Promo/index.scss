@@ -1,8 +1,19 @@
 .promo {
-    background: linear-gradient(253.1deg, rgba(255, 122, 122, 0.56) 14.23%, #2A0FD3 101.22%);
-    border: 1px solid #000;
     border-radius: 20px;
-    padding: 30px;
+    height: 100%;
+
+    .atropos-inner {
+        border-radius: 20px;
+    }
+
+    .content {
+        background: linear-gradient(253.1deg, rgba(255, 122, 122, 0.56) 14.23%, #2A0FD3 101.22%);
+        border: 1px solid #000;
+        padding: 30px;
+        border-radius: 20px;
+        backface-visibility: hidden;
+        overflow: hidden;
+    }
 
     &_main {
         max-width: 230px;
@@ -39,5 +50,60 @@
             border-radius: 10px;
             padding: 12px 25px;
         }
+    }
+}
+
+@media screen and (min-width: 767.98px) {
+    .promo {
+        &_media {
+            position: relative;
+
+            img {
+                position: absolute;
+                transition: .3s ease-in-out;
+
+                &.blue {
+                    width: 66px;
+                    top: 95px;
+                    right: 220px;
+                }
+
+                &.black {
+                    width: 133px;
+                    top: -42px;
+                    right: 100px;
+                }
+
+                &.pink {
+                    width: 194px;
+                    top: 50px;
+                    right: 20px;
+                }
+
+                &.white {
+                    width: 228px;
+                    right: -108px;
+                    bottom: -63px;
+                }
+
+                &.green {
+                    width: 124px;
+                    bottom: -108px;
+                    right: 90px;
+                }
+
+                &.prism {
+                    width: 98px;
+                    right: -20px;
+                    top: -40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 991.98px) {
+    .promo {
+        grid-area: 1 / 1 / 2 / 3;
     }
 }

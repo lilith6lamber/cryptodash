@@ -1,0 +1,69 @@
+.trend {
+    border: 2px solid rgba(#fff, .3);
+
+    &_title {
+        margin-bottom: 40px;
+    }
+
+    &_table {
+        &-header {
+            color: #BFB7B7;
+            font-size: 10px;
+            margin-bottom: 12px;
+            grid-template-columns: repeat(3, 1fr);
+
+            span {
+                &:nth-of-type(2),
+                &:last-of-type {
+                    text-align: right;
+                }
+            }
+        }
+
+        &-info {
+            font-size: 12px;
+            gap: 12px 0;
+
+            &_item {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+
+                span {
+                    &:nth-of-type(2),
+                    &:last-of-type {
+                        text-align: right;
+                    }
+                }
+
+                .coin {
+                    &-name {
+                        color: #9A9A9A;
+                        margin-left: 10px;
+                    }
+
+                    &-price {
+                        color: #9292C1;
+                    }
+
+                    &-change {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: flex-end;
+
+                        .icon {
+                            margin-left: 10px;
+
+                            &.ascending {
+                                color: #00B929;
+                            }
+
+                            &.descending {
+                                color: #FF2D2E;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -2,6 +2,7 @@
 @import "bootstrap/dist/css/bootstrap-grid";
 @import "scss/base";
 @import "scss/global";
+@import 'atropos/atropos.scss';
 
 body {
     background: #261E35;
@@ -13,8 +14,10 @@ body {
 .App {
     &_content {
         padding: 20px;
+
         &-grid {
             grid-gap: 20px;
+            grid-template-columns: minmax(0, 1fr);
         }
     }
 }
@@ -24,6 +27,29 @@ body {
         &_content {
             padding: 30px;
             flex-grow: 1;
+        }
+    }
+}
+
+@media screen and (min-width: 991.98px) {
+    .App {
+        &_content {
+            &-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1399.98px) {
+    .App {
+        &_content {
+            max-width: 1440px;
+            margin: 0 auto;
+            &-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) 240px minmax(0, 1fr);
+                grid-gap: 30px;
+            }
         }
     }
 }
