@@ -10,7 +10,7 @@ export default class Assets extends Component {
             ltc: 15.33
         },
         data: this.props.data,
-        modifiedData: {}
+        modifiedData: []
     }
 
     componentDidMount() {
@@ -26,27 +26,18 @@ export default class Assets extends Component {
 
     setData = () => {
         const {data, assets} = this.state;
+        let arr = [];
         for (let assetKey in assets) {
             for (let dataKey in data) {
-                // assetKey === data[dataKey].symbol ? '' : ''
+                if(assetKey === data[dataKey].symbol) {
+                    arr.push({...data[dataKey],
+                        calc: data[dataKey].last * assets[assetKey],
+                        balance: assets[assetKey]
+                    })
+                }
             }
         }
-        //this.state.data[someKey].symbol = this.state.assets[anotherKey]
-        for (let i = 0; i < this.state.data.length; i++) {
-            console.log(Object.entries(this.state.data)[i])
-            for (let key in this.state.assets) {
-                // Object.entries(this.state.data[i])
-            }
-        }
-    }
-
-    calculate = () => {
-        for (let key in this.state.assets) {
-            if (key === this.state.data[key]) {
-                console.log(this.state.assets[key] * this.state.data[key].last)
-                return this.state.assets[key] * this.state.data[key].last
-            }
-        }
+        this.setState({ modifiedData: arr })
     }
 
     render() {
@@ -59,26 +50,26 @@ export default class Assets extends Component {
                     </span>
                 </div>
                 <ul className="assets_list d-flex flex-column">
-                    {/*{*/}
-                    {/*    filterArr.map(item => {*/}
-                    {/*        const {img, symbol, name, calculated} = item;*/}
-                    {/*        return (*/}
-                    {/*            <li className="assets_list-item d-flex" key={`${symbol}_assets`}>*/}
-                    {/*                    <span className="image">*/}
-                    {/*                        <img src={img} alt={name}/>*/}
-                    {/*                    </span>*/}
-                    {/*                <span className="name d-flex flex-column">*/}
-                    {/*                        <span className="name_name">{name}</span>*/}
-                    {/*                        <span className="name_symbol">{symbol}</span>*/}
-                    {/*                    </span>*/}
-                    {/*                <span className="balance d-flex flex-column">*/}
-                    {/*                        <span className="balance_coin">{assets[symbol]}</span>*/}
-                    {/*                        <span className="balance_calculated">{calculated}</span>*/}
-                    {/*                    </span>*/}
-                    {/*            </li>*/}
-                    {/*        )*/}
-                    {/*    })*/}
-                    {/*}*/}
+                    {
+                        Object.keys(this.state.modifiedData).map(item => {
+                            const {img, symbol, name, calc, balance} = this.state.modifiedData[item];
+                            return (
+                                <li className="assets_list-item d-flex" key={`${symbol}_assets`}>
+                                        <span className="image">
+                                            <img src={img} alt={name}/>
+                                        </span>
+                                    <span className="name d-flex flex-column">
+                                            <span className="name_name">{name}</span>
+                                            <span className="name_symbol">{symbol}</span>
+                                        </span>
+                                    <span className="balance d-flex flex-column">
+                                            <span className="balance_coin">{balance}</span>
+                                            <span className="balance_calculated">{calc.toFixed(2)}</span>
+                                        </span>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
         )
