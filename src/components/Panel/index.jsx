@@ -3,7 +3,8 @@ import {RiArrowLeftSLine} from 'react-icons/ri'
 import {BiBell} from 'react-icons/bi'
 import {IoMdSearch} from 'react-icons/io'
 import avatar from '../../assets/avatar.png'
-import DotsLoader from "../DotsLoader";
+import dots from '../../assets/dotsloader.json'
+import Loader from "../Loader";
 import {useState} from "react";
 
 export default function Panel({windowWidth}) {
@@ -55,9 +56,9 @@ export default function Panel({windowWidth}) {
                     />
                     {
                         isLoading ?
-                            <DotsLoader className={"dotsLoader show"} />
+                            <Loader className={"dotsLoader show"} animation={dots} />
                             :
-                            <DotsLoader className={"dotsLoader"} />
+                            <Loader className={"dotsLoader hide"} animation={dots} />
                     }
                     <button className="btn" type="submit">
                         <IoMdSearch />

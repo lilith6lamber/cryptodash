@@ -1,12 +1,57 @@
 .assets {
     &_header {
+        margin-bottom: 20px;
+
         .icon {
             color: #808080;
         }
     }
-    &_list {
-        &-item {
 
+    &_list {
+        gap: 15px 0;
+
+        &-item {
+            gap: 0 10px;
+            font-size: 14px;
+            align-items: center;
+            justify-content: space-between;
+
+            .image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgba(10, 9, 48, 0.3);
+                border-radius: 8px;
+                width: 40px;
+                height: 40px;
+
+                img {
+                    max-width: 24px;
+                }
+            }
+
+            .name {
+                flex-grow: 1;
+
+                &_symbol {
+                    text-transform: uppercase;
+                    color: #9A9A9A;
+                    font-size: 12px;
+                }
+            }
+
+            .balance {
+                text-align: right;
+
+                &_coin {
+                    font-weight: 700;
+                }
+
+                &_calculated {
+                    color: #9A9A9A;
+                    font-size: 12px;
+                }
+            }
         }
     }
 }

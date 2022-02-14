@@ -1,4 +1,5 @@
 import './App.scss';
+import Loader from "./components/Loader";
 import Sidebar from "./components/Sidebar";
 import Panel from "./components/Panel";
 import Promo from "./components/Promo";
@@ -10,11 +11,12 @@ import {Component} from "react";
 import Assets from "./components/Assets";
 import CompareChart from "./components/CompareChart";
 import Slider from "./components/Slider";
+import gears from "../src/assets/gears.json"
+
 import axios from 'axios';
 const base = 'https://api.coingecko.com/api/v3/';
 
 //TODO: auto update?
-//TODO: app preloader
 
 export default class App extends Component {
     state = {
@@ -66,6 +68,7 @@ export default class App extends Component {
         const {windowWidth, data, dataLoaded} = this.state;
         return (
             dataLoaded === true ? <>
+                <Loader className="pageloader hide" animation={gears} />
                 <div className="App d-md-flex align-items-start">
                     <Sidebar/>
                     <div className="App_content">
@@ -82,7 +85,7 @@ export default class App extends Component {
                         </div>
                     </div>
                 </div>
-            </> : null
+            </> : <Loader className="pageloader show" animation={gears} />
         );
     }
 }

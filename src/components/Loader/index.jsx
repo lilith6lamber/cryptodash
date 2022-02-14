@@ -1,11 +1,9 @@
 import './index.scss'
 import Lottie from "lottie-react";
-import loader from '../../assets/dotsloader.json'
-
-export default function DotsLoader({className}) {
+export default function Loader({className, animation}) {
     return (
-        <Lottie className={className}
-                animationData={loader}
+        <Lottie className={`${className} loader`}
+                animationData={animation}
                 loop="loop"
                 autoplay="autoplay"
                 width="100%"

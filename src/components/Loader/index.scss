@@ -1,0 +1,35 @@
+.loader {
+    transition: opacity .4s ease-in-out;
+
+    &.hide {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+    }
+}
+
+.pageloader {
+    &.show {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.dotsLoader {
+    height: 40px;
+    width: 80px;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}

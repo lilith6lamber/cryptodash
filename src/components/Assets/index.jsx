@@ -64,7 +64,7 @@ export default class Assets extends Component {
                                         </span>
                                     <span className="balance d-flex flex-column">
                                             <span className="balance_coin">{balance}</span>
-                                            <span className="balance_calculated">{calc.toFixed(2)}</span>
+                                            <span className="balance_calculated">${calc.toFixed(2)}</span>
                                         </span>
                                 </li>
                             )

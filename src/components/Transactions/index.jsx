@@ -4,7 +4,8 @@ import {FiPlus} from 'react-icons/fi'
 import girl from '../../assets/girl.png'
 import boy from '../../assets/boy.png'
 import {useState, useEffect} from "react";
-import Success from "../Success";
+import done from '../../assets/success.json'
+import Loader from "../Loader";
 
 export default function Transactions() {
     const [transactionValue, setValue] = useState('');
@@ -96,7 +97,7 @@ export default function Transactions() {
                         disabled={!status}
                 >
                     {
-                        success ? <Success className="success"/> : <><FaRegPaperPlane /> Transfer Now</>
+                        success ? <Loader className="success show" animation={done}/> : <><FaRegPaperPlane /> Transfer Now</>
                     }
 
                 </button>

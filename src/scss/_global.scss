@@ -23,3 +23,23 @@
     font-weight: bold;
     color: #868B93;
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #3a383f #5a5268;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #3a383f;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #5a5268;
+}
