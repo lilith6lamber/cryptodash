@@ -4,12 +4,15 @@ import styled from "styled-components";
 export const StyledSelect = styled(Select)`
   .Select__control {
     height: 40px;
-    width: 100%;
-    border: 2px solid rgba(255,255,255, .5);
-    border-radius: 5px;
+    width: 110px;
+    border: none;
     cursor: pointer;
-    background: transparent;
     transition: .3s ease-in-out;
+    background-color: rgba(26, 17, 29, 0.7);
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 700;
   }
   .Select__control:hover {
     border-color: #fff;

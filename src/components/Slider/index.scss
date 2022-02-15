@@ -1,0 +1,111 @@
+.exchange {
+    &_slider {
+        width: 100%;
+        position: relative;
+
+        &-nav {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            color: #fff;
+
+            .control {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                background: #2D2346;
+                border: 1px solid #614698;
+                border-radius: 50%;
+                opacity: .4;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-slide {
+            border: 2px solid rgba(#fff, .3);
+
+            .icon {
+                display: flex;
+                align-items: center;
+            }
+
+            &_header {
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+
+                .currencies {
+                    display: flex;
+                    align-items: center;
+                    gap: 0 5px;
+                    color: #868B93;
+
+                    .icon {
+                        color: #fff;
+                        font-size: 24px;
+                    }
+                }
+
+                .percentage {
+                    display: flex;
+                    align-items: center;
+                    gap: 0 5px;
+
+                    .icon {
+                        font-size: 16px;
+                    }
+
+                    &.ascending {
+                        color: #00C287;
+                    }
+
+                    &.descending {
+                        color: #E72D04;
+
+                        .icon {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+
+            &_main {
+                position: relative;
+                padding-bottom: 80px;
+
+                .last-exchange {
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+
+                .graph {
+                    width: 100%;
+                    height: 100%;
+                    max-height: 100px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    &_img {
+                        position: absolute;
+                        bottom: 0;
+                        max-height: 100px;
+                        width: auto;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+            }
+        }
+    }
+}

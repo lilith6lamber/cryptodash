@@ -59,7 +59,8 @@
 @media screen and (min-width: 767.98px) {
     .sidebar {
         max-width: 100px;
-        height: 100vh;
+        flex-grow: 1;
+        align-self: stretch;
         border: none;
         box-shadow: inset -1.5px 0px 0px rgba(255, 255, 255, 0.15);
         padding: 30px;

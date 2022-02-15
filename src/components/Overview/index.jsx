@@ -1,29 +1,37 @@
 import './index.scss'
 import Chart from "./Chart";
-import Select from "react-select/base";
+import {StyledSelect} from "../Select";
 import data from './data.json'
+import {useState} from "react";
 
 export default function Overview() {
-    const periods = ["daily", "weekly", "monthly"];
+    const [selectedPeriod, setSelection] = useState("daily");
+    const periods = [
+        {value: "daily", label: "daily"},
+        {value: "weekly", label: "weekly"},
+        {value: "monthly", label: "monthly"}
+    ];
 
     const getSelectedPeriod = (e) => {
-        e.preventDefault();
+        setSelection(e.value)
     }
     return (
         <div className="overview card">
             <div className="overview_header">
                 <h4 className="overview_header-title card-title">Market Overview</h4>
-                <Select
+                <StyledSelect
                     classNamePrefix="Select"
-                    className="period-select"
-                    placeholder="placeholder"
+                    className="converter_form-select"
+                    placeholder={selectedPeriod}
                     onChange={getSelectedPeriod}
-                    options={periods.map(item => <option value={item}>{item}</option>)}
+                    options={periods}
+                    isSearchable={false}
+                    hideSelectedOptions={true}
                 >
-                </Select>
+                </StyledSelect>
             </div>
             <div className="overview_chart">
-                <Chart period={data.day} />
+                <Chart period={data.day}/>
             </div>
         </div>
     )

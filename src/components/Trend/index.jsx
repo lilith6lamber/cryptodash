@@ -34,17 +34,17 @@ export default class Trend extends Component {
                     <ul className="trend_table-info d-flex flex-column">
                         {
                             Object.keys(this.state.data).map(key => {
-                                console.log(this.state.data[key])
+                                const {symbol, name, last, change} = this.state.data[key];
                                 return (
-                                    <li key={this.state.data[key].symbol} className="trend_table-info_item">
-                                    <span className="coin-id">{this.state.data[key].symbol.toUpperCase()}
-                                        <span className="coin-name">{this.state.windowWidth >= 475 ? this.state.data[key].name : null}</span>
+                                    <li key={symbol} className="trend_table-info_item">
+                                    <span className="coin-id">{symbol.toUpperCase()}
+                                        <span className="coin-name">{this.state.windowWidth >= 475 ? name : null}</span>
                                     </span>
-                                        <span className="coin-price">${this.state.data[key].last}</span>
+                                        <span className="coin-price">${last}</span>
                                         <span className="coin-change">
-                                        {this.state.data[key].change.toFixed(3)}
+                                        {change.toFixed(2)}
                                             {
-                                                this.state.data[key].change > 0 ?
+                                                change > 0 ?
                                                     <AiFillCaretUp className="ascending icon"/>
                                                     :
                                                     <AiFillCaretDown className="descending icon"/>
