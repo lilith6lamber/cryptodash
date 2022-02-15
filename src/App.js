@@ -16,8 +16,6 @@ import gears from "../src/assets/gears.json"
 import axios from 'axios';
 const base = 'https://api.coingecko.com/api/v3/';
 
-//TODO: auto update?
-
 export default class App extends Component {
     state = {
         dataLoaded: false,
@@ -41,7 +39,9 @@ export default class App extends Component {
 
     getInfo = async () => {
         for (let coin in this.state.data) {
-            const response = await axios.get(`${base}coins/${coin}?tickers=true&market_data=true&community_data=false&developer_data=false`);
+            const response = await axios.get
+            (`${base}coins/${coin}?community_data=false&developer_data=false&sparkline=true`)
+            ;
             const data = response.data;
             this.setState(prevState => ({
                 data: {
@@ -51,7 +51,8 @@ export default class App extends Component {
                         symbol: data.symbol,
                         name: data.name,
                         last: data.market_data.current_price.usd,
-                        change: data.market_data.price_change_24h
+                        change: data.market_data.price_change_24h,
+                        sparkline: data.market_data.sparkline_7d
                     }
                 }
             }))
@@ -77,7 +78,7 @@ export default class App extends Component {
                             <Promo windowWidth={windowWidth}/>
                             <Transactions/>
                             <Profit/>
-                            <Overview/>
+                            <Overview data={data}/>
                             <Trend windowWidth={windowWidth} data={data}/>
                             <Assets data={data}/>
                             <CompareChart/>
