@@ -12,15 +12,6 @@ export default class Trend extends Component {
         this.setState({data: this.props.data})
     }
 
-    // componentDidUpdate(prevProps, prevState, SS) {
-    //     if (this.props.data !== prevProps.data) {
-    //         this.setState({data: this.props.data})
-    //     }
-    //     if (this.props.windowWidth !== prevProps.windowWidth) {
-    //         this.setState({windowWidth: this.props.windowWidth})
-    //     }
-    // }
-
     render() {
         return (
             <div className="trend card d-flex flex-column justify-content-between">

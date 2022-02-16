@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import {kFormatter} from "../../../js/helpers";
+import data from "bootstrap/js/src/dom/data";
 
 const CustomTooltip = ({ payload, label, gradientColor }) => (
     <div className="recharts-tooltip">
@@ -67,9 +68,19 @@ export default function Chart({period}) {
                         />
                     )}
                 />
-                <Line type="linear" strokeWidth={3} dataKey="btc" stroke="url(#btc)" fill="url(#btc)" />
-                <Line type="linear" strokeWidth={3} dataKey="eth" stroke="url(#eth)" fill="url(#eth)" />
-                <Line type="linear" strokeWidth={3} dataKey="ltc" stroke="url(#ltc)" fill="url(#ltc)" />
+                {period.map((s) => (
+                    <>
+                        <Line dataKey={s.data.index.map(i => i)}
+                              data={s.data}
+                              name={s.name}
+                              key={`${s.name}_index`}
+                              stroke="url(#eth)"
+                              fill="url(#eth)"
+                        />
+                        <Line dataKey="data.price[0]" data={s.data} name={s.name} key={`${s.name}_price`} stroke="url(#btc)" fill="url(#btc)" />
+                        <Line dataKey="data.volumes[0]" data={s.data} name={s.name} key={`${s.name}_volumes`} stroke="url(#ltc)" fill="url(#ltc)" />
+                    </>
+                ))}
             </LineChart>
         </ResponsiveContainer>
     );
