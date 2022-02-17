@@ -55,6 +55,7 @@
 
 @media screen and (min-width: 767.98px) {
     .promo {
+        grid-area: 1 / 1 / 2 / 3;
         &_media {
             position: relative;
 

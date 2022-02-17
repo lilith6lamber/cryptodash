@@ -34,7 +34,7 @@ export default class Overview extends Component {
                     <h4 className="overview_header-title card-title">Market Overview</h4>
                     <StyledSelect
                         classNamePrefix="Select"
-                        className="converter_form-select"
+                        className="overview_header-select"
                         placeholder={this.state.selectedValue}
                         onChange={this.getSelectedPeriod}
                         options={this.state.coinsKeys}
@@ -43,15 +43,10 @@ export default class Overview extends Component {
                     >
                     </StyledSelect>
                 </div>
-                <div className="overview_chart">
-                    {/*<Chart period={*/}
-                    {/*    Object.keys(this.state.data).map(key => {*/}
-                    {/*        return {*/}
-                    {/*            name: key,*/}
-                    {/*            data: this.state.data[key][selectedValue]*/}
-                    {/*        }*/}
-                    {/*    })*/}
-                    {/*}/>*/}
+                <div className="overview_wrapper">
+                    <div className="overview_chart">
+                        <Chart period={this.state.data[selectedValue].sparkline} />
+                    </div>
                 </div>
             </div>
         )

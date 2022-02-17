@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const StyledSelect = styled(Select)`
   .Select__control {
     height: 40px;
-    width: 110px;
     border: none;
     cursor: pointer;
     transition: .3s ease-in-out;

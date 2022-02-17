@@ -1,3 +1,4 @@
+import './index.scss'
 import {Component} from "react";
 
 export default class CompareChart extends Component {

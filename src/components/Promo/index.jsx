@@ -1,5 +1,5 @@
 import './index.scss'
-import Atropos from 'atropos';
+import Atropos from 'atropos/react';
 
 import black from '../../assets/black.png'
 import blue from '../../assets/blue.png'
@@ -9,14 +9,8 @@ import green from '../../assets/green.png'
 import white from '../../assets/white.png'
 
 export default function Promo({windowWidth}) {
-    const myAtropos = Atropos({
-        el: '.my-atropos',
-        activeOffset: 10,
-        rotateXMax: 2,
-        rotateYMax: 2
-    });
     return (
-        <div className="promo atropos my-atropos">
+        <Atropos className="promo atropos my-atropos" activeOffset={100} rotateXMax={1} rotateYMax={1}>
             <div className="atropos-scale">
                 <div className="atropos-rotate">
                     <div className="atropos-inner">
@@ -42,6 +36,6 @@ export default function Promo({windowWidth}) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Atropos>
     )
 }

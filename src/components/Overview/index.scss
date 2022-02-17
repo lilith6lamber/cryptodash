@@ -2,11 +2,31 @@
     &_header {
         margin-bottom: 30px;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
+        gap: 10px 0;
+
+        &-select {
+            width: 100%;
+        }
+    }
+
+    &_wrapper {
+        overflow-x: scroll;
+        &::-webkit-scrollbar {
+            height: 3px;
+        }
     }
 
     &_chart {
-        height: 200px;
+        height: 300px;
+        min-width: 600px;
+        max-width: 100%;
+
+    }
+}
+
+@media screen and (min-width: 767.98px) {
+    .overview {
+        grid-area: 3 / 1 / 4 / 3;
     }
 }

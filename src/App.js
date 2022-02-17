@@ -45,23 +45,14 @@ export default class App extends Component {
     getInfo = async () => {
         for (let coin in this.state.data) {
             const response = await axios.get
-                (`${base}coins/${coin}?community_data=false&developer_data=false`)
+                (`${base}coins/${coin}?community_data=false&developer_data=false&sparkline=true`)
             ;
-            const dailyChart = await axios.get(`${base}/coins/${coin}/market_chart?vs_currency=usd&days=1`)
-            const weeklyChart = await axios.get(`${base}/coins/${coin}/market_chart?vs_currency=usd&days=6&interval=daily`)
-            const monthlyChart = await axios.get(`${base}/coins/${coin}/market_chart?vs_currency=usd&days=29&interval=daily`)
-            const data = response.data,
-                day = setChartData(dailyChart),
-                week = setChartData(weeklyChart),
-                month = setChartData(monthlyChart);
+            const data = response.data;
             this.setState(prevState => ({
                 data: {
                     ...prevState.data,
                     [coin]: {
                         ...prevState.data[coin],
-                        daily: day,
-                        weekly: week,
-                        monthly: month,
                         img: data.image.thumb,
                         symbol: data.symbol,
                         name: data.name,
@@ -69,26 +60,23 @@ export default class App extends Component {
                         change: data.market_data.price_change_24h,
                         changePercent: data.market_data.price_change_percentage_24h_in_currency.usd,
                         changePrice: data.market_data.price_change_24h_in_currency.usd,
+                        sparkline: data.market_data.sparkline_7d.price
                     }
                 }
             }))
         }
         this.setState({dataLoaded: true})
-
-        function setChartData(dataObj) {
-            let chartObj = {index: [], price: [], volumes: []};
-            for (const item of dataObj.data.prices) {
-                chartObj.index.push(item[0]);
-                chartObj.price.push(item[1]);
-            }
-            for (const item of dataObj.data.total_volumes) chartObj.volumes.push(item[1]);
-            return chartObj;
-        }
     }
 
     async componentDidMount() {
         this.setWidth();
         await this.getInfo();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.state.windowWidth !== prevState.windowWidth) {
+            this.setWidth();
+        }
     }
 
     render() {
