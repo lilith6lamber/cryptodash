@@ -5,18 +5,27 @@ import {Component} from "react";
 
 export default class Overview extends Component {
     state = {
-        periods: [
-            {value: "daily", label: "daily"},
-            {value: "weekly", label: "weekly"},
-            {value: "monthly", label: "monthly"}
-        ],
-        selectedValue: "daily",
+        coinsKeys: [],
+        selectedValue: "bitcoin",
         data: this.props.data
+    }
+
+    getCoinsKeys = () => {
+        let keysArr = [];
+        for (let key in this.state.data) {
+            keysArr.push({value: key, label: key})
+        }
+        this.setState({coinsKeys: keysArr})
     }
 
     getSelectedPeriod = (e) => {
         this.setState({selectedValue: e.value})
     }
+
+    componentDidMount() {
+        this.getCoinsKeys();
+    }
+
     render() {
         const {selectedValue} = this.state;
         return (
@@ -28,21 +37,21 @@ export default class Overview extends Component {
                         className="converter_form-select"
                         placeholder={this.state.selectedValue}
                         onChange={this.getSelectedPeriod}
-                        options={this.state.periods}
+                        options={this.state.coinsKeys}
                         isSearchable={false}
                         hideSelectedOptions={true}
                     >
                     </StyledSelect>
                 </div>
                 <div className="overview_chart">
-                    <Chart period={
-                        Object.keys(this.state.data).map(key => {
-                            return {
-                                name: key,
-                                data: this.state.data[key][selectedValue]
-                            }
-                        })
-                    }/>
+                    {/*<Chart period={*/}
+                    {/*    Object.keys(this.state.data).map(key => {*/}
+                    {/*        return {*/}
+                    {/*            name: key,*/}
+                    {/*            data: this.state.data[key][selectedValue]*/}
+                    {/*        }*/}
+                    {/*    })*/}
+                    {/*}/>*/}
                 </div>
             </div>
         )
