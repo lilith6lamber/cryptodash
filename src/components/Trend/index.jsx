@@ -12,6 +12,12 @@ export default class Trend extends Component {
         this.setState({data: this.props.data})
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.state.windowWidth !== prevState.windowWidth) {
+            this.setState({windowWidth: this.props.windowWidth})
+        }
+    }
+
     render() {
         return (
             <div className="trend card d-flex flex-column justify-content-between">
@@ -29,7 +35,7 @@ export default class Trend extends Component {
                                 return (
                                     <li key={symbol} className="trend_table-info_item">
                                     <span className="coin-id">{symbol.toUpperCase()}
-                                        <span className="coin-name">{this.state.windowWidth >= 475 ? name : null}</span>
+                                        <span className="coin-name">{this.props.windowWidth >= 475 ? name : null}</span>
                                     </span>
                                         <span className="coin-price">${last}</span>
                                         <span className="coin-change">

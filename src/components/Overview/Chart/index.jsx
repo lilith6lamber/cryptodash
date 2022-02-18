@@ -39,7 +39,7 @@ export default function Chart({period}) {
     return (
         <ResponsiveContainer width={"100%"} height={"100%"}>
             <LineChart width={1100} height={300} data={formattedData}  margin={{ top: 5, right: 0, left: -30, bottom: 0 }}>
-                <Line type="monotone" dataKey="value" stroke="#8884d8" />
+                <Line type="monotone" dataKey="value" stroke="#8884d8" strokeWidth="5px" />
                 <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
                 <XAxis dataKey="date" interval={5}  />
                 <YAxis tickFormatter={tick => {return kFormatter(tick)}} />
