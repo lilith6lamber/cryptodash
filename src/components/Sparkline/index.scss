@@ -47,14 +47,23 @@
 @media screen and (min-width: 991.98px) {
     .sparkline {
         grid-area: 3 / 1 / 4 / 4;
+
+        &_wrapper {
+            overflow: hidden;
+        }
+
+        &_chart {
+            min-width: unset;
+        }
     }
 }
+
 @media screen and (min-width: 1399.98px) {
     .sparkline {
         grid-area: 2 / 3 / 3 / 5;
+
         &_chart {
-            height: 170px;
-            min-width: unset;
+            height: 180px;
         }
     }
 }
