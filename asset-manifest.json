@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/cryptodash/static/css/main.1ae82fb9.css",
-    "main.js": "/cryptodash/static/js/main.de226349.js",
+    "main.css": "/cryptodash/static/css/main.0bba6083.css",
+    "main.js": "/cryptodash/static/js/main.62dfcd5a.js",
     "static/media/white.png": "/cryptodash/static/media/white.e120a18878b72156f2b6.png",
     "static/media/green.png": "/cryptodash/static/media/green.fc4207f522c1e50889f2.png",
     "static/media/prism.png": "/cryptodash/static/media/prism.93c01b5197c1d002ba4c.png",
@@ -16,11 +16,11 @@
     "static/media/graph3.svg": "/cryptodash/static/media/graph3.af943a873e3b99ed958b89972dbbe405.svg",
     "index.html": "/cryptodash/index.html",
     "static/media/logo.svg": "/cryptodash/static/media/logo.b699e37d5725d5786ec7e6dd8133bd0d.svg",
-    "main.1ae82fb9.css.map": "/cryptodash/static/css/main.1ae82fb9.css.map",
-    "main.de226349.js.map": "/cryptodash/static/js/main.de226349.js.map"
+    "main.0bba6083.css.map": "/cryptodash/static/css/main.0bba6083.css.map",
+    "main.62dfcd5a.js.map": "/cryptodash/static/js/main.62dfcd5a.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ae82fb9.css",
-    "static/js/main.de226349.js"
+    "static/css/main.0bba6083.css",
+    "static/js/main.62dfcd5a.js"
   ]
 }
