@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/cryptodash/static/css/main.1ae82fb9.css",
+    "main.js": "/cryptodash/static/js/main.de226349.js",
+    "static/media/white.png": "/cryptodash/static/media/white.e120a18878b72156f2b6.png",
+    "static/media/green.png": "/cryptodash/static/media/green.fc4207f522c1e50889f2.png",
+    "static/media/prism.png": "/cryptodash/static/media/prism.93c01b5197c1d002ba4c.png",
+    "static/media/girl.png": "/cryptodash/static/media/girl.09fcff37512a65510fd3.png",
+    "static/media/boy.png": "/cryptodash/static/media/boy.30ad9bf8d2f9c363c150.png",
+    "static/media/blue.png": "/cryptodash/static/media/blue.e974ea6417cd70624dce.png",
+    "static/media/black.png": "/cryptodash/static/media/black.e4853fc7c996334cbc43.png",
+    "static/media/avatar.png": "/cryptodash/static/media/avatar.fc367f52d20eef0d95fd.png",
+    "static/media/pink.png": "/cryptodash/static/media/pink.b25f017f287b72c38f59.png",
+    "static/media/graph2.svg": "/cryptodash/static/media/graph2.b799f47bb70febbc44761a3547609bb8.svg",
+    "static/media/graph1.svg": "/cryptodash/static/media/graph1.ae0da2755e1ddba0f7a5b69b018716c4.svg",
+    "static/media/graph3.svg": "/cryptodash/static/media/graph3.af943a873e3b99ed958b89972dbbe405.svg",
+    "index.html": "/cryptodash/index.html",
+    "static/media/logo.svg": "/cryptodash/static/media/logo.b699e37d5725d5786ec7e6dd8133bd0d.svg",
+    "main.1ae82fb9.css.map": "/cryptodash/static/css/main.1ae82fb9.css.map",
+    "main.de226349.js.map": "/cryptodash/static/js/main.de226349.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ae82fb9.css",
+    "static/js/main.de226349.js"
+  ]
+}
