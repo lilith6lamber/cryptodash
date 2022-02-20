@@ -10,7 +10,7 @@ import white from '../../assets/white.png'
 
 export default function Promo({windowWidth}) {
     return (
-        <Atropos className="promo atropos my-atropos" activeOffset={100} rotateXMax={1} rotateYMax={1}>
+        <Atropos className="promo atropos my-atropos" activeOffset={100} rotateXMax={1} rotateYMax={1} >
             <div className="atropos-scale">
                 <div className="atropos-rotate">
                     <div className="atropos-inner">
@@ -19,7 +19,7 @@ export default function Promo({windowWidth}) {
                                 <h5 className="promo_main-subtitle" data-atropos-offset="2">Ethereum 2.0</h5>
                                 <h3 className="promo_main-title" data-atropos-offset="3">Your Gateway into Blockchain</h3>
                                 <p className="promo_main-text" data-atropos-offset="2">Paronia is a blockchain platform. We make blockchain accessible.</p>
-                                <a className="promo_main-btn" data-atropos-offset="3" href="#">Learn More.</a>
+                                <a className="promo_main-btn" data-atropos-offset="-2" href="#">Learn More.</a>
                             </div>
                             {
                                 windowWidth >= 767.98 ?

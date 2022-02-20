@@ -5,11 +5,10 @@ import Panel from "./components/Panel";
 import Promo from "./components/Promo";
 import Profit from "./components/Profit";
 import Transactions from "./components/Transactions";
-import Overview from "./components/Overview";
+import Sparkline from "./components/Sparkline";
 import Trend from "./components/Trend";
 import {Component} from "react";
 import Assets from "./components/Assets";
-import CompareChart from "./components/CompareChart";
 import Slider from "./components/Slider";
 import gears from "../src/assets/gears.json"
 
@@ -92,10 +91,9 @@ export default class App extends Component {
                             <Promo windowWidth={windowWidth}/>
                             <Transactions/>
                             <Profit/>
-                            <Overview data={data}/>
+                            <Sparkline data={data}/>
                             <Trend windowWidth={windowWidth} data={data}/>
                             <Assets data={data}/>
-                            <CompareChart/>
                             <Slider data={data}/>
                         </div>
                     </div>

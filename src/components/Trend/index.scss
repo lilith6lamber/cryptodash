@@ -57,7 +57,7 @@
                         justify-content: flex-end;
 
                         .icon {
-                            margin-left: 10px;
+                            margin-left: 5px;
 
                             &.ascending {
                                 color: #00B929;
@@ -66,6 +66,54 @@
                             &.descending {
                                 color: #FF2D2E;
                             }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 767.98px) {
+    .trend {
+        &_table {
+            &-info {
+                &_item {
+                    .coin {
+                        &-name {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1199.98px) {
+    .trend {
+        &_table {
+            &-info {
+                &_item {
+                    .coin {
+                        &-name {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1399.98px) {
+    .trend {
+        &_table {
+            &-info {
+                &_item {
+                    .coin {
+                        &-name {
+                            display: none;
                         }
                     }
                 }

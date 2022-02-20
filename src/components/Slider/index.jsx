@@ -22,6 +22,12 @@ export default function Slider({data}) {
                     575.98: {
                         slidesPerView: 2,
                     },
+                    991.98: {
+                        slidesPerView: 3,
+                    },
+                    1199.98: {
+                        slidesPerView: 4,
+                    },
                 }}
             >
                 {

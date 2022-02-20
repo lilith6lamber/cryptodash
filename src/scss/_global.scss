@@ -11,11 +11,21 @@
 }
 
 .recharts-tooltip {
-    background: #3e3a4d;
+    background-color: #3e3a4d !important;
     border-radius: 12px;
     backdrop-filter: blur(10px);
     text-transform: uppercase;
     font-size: 14px;
+    padding: 20px !important;
+    font-weight: 500;
+
+    &-label {
+        margin-bottom: 5px !important;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .recharts-cartesian-axis-tick {
@@ -23,6 +33,33 @@
     text-transform: uppercase;
     font-weight: bold;
     color: #868B93;
+}
+
+.radio-wrapper {
+    height: fit-content;
+    display: flex;
+
+    input[type="radio"] {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+
+        & + label {
+            display: block;
+            padding: 10px;
+            color: #8D8598;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: rgba(26, 17, 29, 0.7);
+            border-radius: 10px;
+            transition: .4s ease-in-out;
+            cursor: pointer;
+        }
+
+        &:checked + label {
+            color: #fff;
+        }
+    }
 }
 
 /* ===== Scrollbar CSS ===== */

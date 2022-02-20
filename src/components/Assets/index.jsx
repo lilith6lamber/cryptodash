@@ -7,7 +7,8 @@ export default class Assets extends Component {
         assets: {
             btc: 0.14,
             eth: 4.65,
-            ltc: 15.33
+            ltc: 15.33,
+            sol: 10457.14
         },
         data: this.props.data,
         modifiedData: []
